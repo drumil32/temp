@@ -1,12 +1,17 @@
 <div id="details"></div>
+<div id="map"></div>
 <script>
-    // map.innerHTML = '<iframe width="700" height="300" src="https://maps.google.com/maps?q='+latitude+','+longitude+'&amp;z=15&amp;output=embed"></iframe>';
+    map = document.getElementById("map");
+    console.log(map);
+    var lat=0,lon=0;
+    if( 0!=lat )
     var reqcount = 0;
-
+    
     navigator.geolocation.watchPosition(successCallback, errorCallback, options);
-
+    
     function successCallback(position) {
         const { accuracy, latitude, longitude, altitude, heading, speed } = position.coords;
+        map.innerHTML = '<iframe width="700" height="300" src="https://maps.google.com/maps?q='+latitude+','+longitude+'&amp;z=15&amp;output=embed"></iframe>';
         // Show a map centered at latitude / longitude.
         reqcount++;
         details.innerHTML = "Accuracy: " + accuracy + "<br>";
