@@ -8,6 +8,7 @@
     navigator.geolocation.watchPosition(successCallback, errorCallback, options);
 
     function successCallback(position) {
+        console.log('change');
         const { accuracy, latitude, longitude, altitude, heading, speed } = position.coords;
         map.innerHTML = '<iframe width="700" height="300" src="https://maps.google.com/maps?q=' + latitude + ',' + longitude + '&amp;z=15&amp;output=embed"></iframe>';
         // Show a map centered at latitude / longitude.
