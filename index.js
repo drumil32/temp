@@ -11,7 +11,7 @@ form.addEventListener('submit', function (e) {
     let getdata = async function () {
 
         try {
-            let response = await fetch('http://api.serpstack.com/search?access_key=b80c69b2c13c284e2817f5d41dc7108b&type=web&query=' + query);
+            let response = await fetch('https://api.serpstack.com/search?access_key=b80c69b2c13c284e2817f5d41dc7108b&type=web&query=' + query);
             let data = await response.json();
 
             data.organic_results.forEach(element => {
